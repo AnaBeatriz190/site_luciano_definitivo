@@ -70,8 +70,8 @@ app.post('/cadastro', (req, res)=> {
      
     });
 
-app.get('/empadas', (req, res) =>{
-    fs.readFile(path.join(__dirname, "public/pages/empadas.html"), (err, data)=>{
+app.get('/salgados', (req, res) =>{
+    fs.readFile(path.join(__dirname, "public/pages/salgados.html"), (err, data)=>{
         if(err){
             res.writeHead(500, {'Content-Type': 'text/plain'});
             res.end('Erro interno do servidor.');
@@ -96,8 +96,8 @@ app.get('/usuarios', (req, res) =>{
     });    
 });
 
-app.get('/projeto2', (req, res) =>{
-    fs.readFile(path.join(__dirname, "public/pages/projeto2.html"), (err, data)=>{
+app.get('/doces', (req, res) =>{
+    fs.readFile(path.join(__dirname, "public/pages/doces.html"), (err, data)=>{
         if(err){
             res.writeHead(500, {'Content-Type': 'text/plain'});
             res.end('Erro interno do servidor.');
