@@ -1,5 +1,3 @@
-//const http = require('http');
-//const moment = require('moment');
 const fs = require('fs');
 const express = require('express');
 const path = require('path');
@@ -29,30 +27,6 @@ app.get('/', (req, res)=> {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/cadastro', (req, res)=> {
-/*
-    const usuario1 = new Usuario('Luciano, luciano@gmail.com, 12345');
-    const usuaruio2 = new Usuario('Alexandre, alexandre@gamil.com, 67890')
-    const usuario3 = new Usuario('José, jose@gmail.com, abcde')
-
-    GerenciadorUsuarios.adicionarUsuario(usuario1);
-    GerenciadorUsuarios.adicionarUsuario(usuaruio2);
-    GerenciadorUsuarios.adicionarUsuario(usuario3);
-
-    GerenciadorUsuarios.listarUsuario();
-
-    GerenciadorUsuarios.removerUsuario(usuario1);
-    
-    GerenciadorUsuarios.removerUsuario();
-
-    const usuarioEncontrado = GerenciadorUsuarios.encontrarUsuarioEmail(usuaruio2);
-    
-    if(usuarioEncontrado){
-        console.log('Encontrado: ', usuarioEncontrado.toString('alexandre@gmail.com'));
-    }else{
-        console.log('Usuário não encontrado')
-    }
-
-*/
     fs.readFile(path.join(__dirname, "/public/pages/cadastro.html"), (err, data)=>{
         if(err){
             res.writeHead(500, {'Content-Type': 'text/plain'});
@@ -96,8 +70,8 @@ app.post('/cadastro', (req, res)=> {
      
     });
 
-app.get('/projeto1', (req, res) =>{
-    fs.readFile(path.join(__dirname, "public/pages/projeto1.html"), (err, data)=>{
+app.get('/empadas', (req, res) =>{
+    fs.readFile(path.join(__dirname, "public/pages/empadas.html"), (err, data)=>{
         if(err){
             res.writeHead(500, {'Content-Type': 'text/plain'});
             res.end('Erro interno do servidor.');
@@ -179,27 +153,3 @@ app.get('/mostrar-usuarios', (req, res)=>{
 app.listen(port, ()=>{
     console.log('Servidor rodando em http://localhost:'+ port);
 });
-
-
-/*
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type' , 'text/plain');
-
-    //console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
-    res.end('Oi, mundo! \n');
-});
-
-const content = "Aula de Linguagens de Scripts...";
-
-fs.writeFile('example.txt', content, (err, data)=>{
-    if(err) throw err;
-    console.log("Arquivo Salvo.");
-});
-
-fs.readFile('example.txt', 'utf8', (err, data)=>{
-    if(err) throw err;
-    console.log(data);
-});
-
-*/
