@@ -58,7 +58,7 @@ app.post('/cadastro', (req, res)=> {
     }
 
 
-    const usuario1 = new Usuario('Luciano, luciano@gmail.com, 12345');
+    const usuario1 = new Usuario('a, luciano@gmail.com, a');
     
     GerenciadorUsuarios.adicionarUsuario(usuario1);
 
@@ -72,6 +72,19 @@ app.post('/cadastro', (req, res)=> {
 
 app.get('/salgados', (req, res) =>{
     fs.readFile(path.join(__dirname, "public/pages/salgados.html"), (err, data)=>{
+        if(err){
+            res.writeHead(500, {'Content-Type': 'text/plain'});
+            res.end('Erro interno do servidor.');
+            return;
+        }
+
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        res.end(data);
+    });    
+});
+
+app.get('/sucos', (req, res) =>{
+    fs.readFile(path.join(__dirname, "public/pages/sucos.html"), (err, data)=>{
         if(err){
             res.writeHead(500, {'Content-Type': 'text/plain'});
             res.end('Erro interno do servidor.');
