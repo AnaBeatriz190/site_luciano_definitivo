@@ -5,6 +5,7 @@ const app = express();
 const port = 3000; 
 
 const Usuario = require('./scripts/usuario')
+const Produto = require('./scripts/produto')
 const GerenciadorUsuarios = require('./scripts/gerenciadorUsuarios');
 const GerenciadorProdutos = require('./scripts/gerenciarProdutos');
 
