@@ -86,31 +86,7 @@ app.post('/cadastroproduto', (req, res)=> {
     const vendedor = req.body.vendedor;
     const nomeproduto = req.body.nomeproduto;
     const tipoproduto = req.body.tipoproduto;
-    const repetirSenha = req.body.pwdRpt;
-
-    if(senha !== repetirSenha){
-        res.send(` <script>
-            alert("As senhas digitadas são diferentes...");
-            location.href = "/cadastro"
-        </script> `);        
-    } else {
-        const usuario = new Usuario(nome, email, senha);
-        GerenciadorUsuarios.adicionarUsuario(usuario);
-
-        res.redirect('/');
-    }
-
-
-    const usuario1 = new Usuario('a, luciano@gmail.com, a');
-    
-    GerenciadorUsuarios.adicionarUsuario(usuario1);
-
-        if(usuarioEncontrado){
-            console.log('Encontrado: ', usuarioEncontrado.toString('alexandre@gmail.com'));
-        }else{
-            console.log('Usuário não encontrado')
-        }
-     
+    const preco = req.body.preco;
 });
 
 
