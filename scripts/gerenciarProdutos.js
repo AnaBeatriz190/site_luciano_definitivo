@@ -8,8 +8,8 @@ class GerenciadorProdutos{
     }
 
     static removerProdutos(produto){
-        this.produtos = this.produtos.filter(u => u.email !== usuario.email);
-        console.log('Produto excluido: ${usuario.nome}');
+        this.produtos = this.produtos.filter(u => u.nome !== produto.nome);
+        console.log(`Produto excluido: ${usuario.nome}`);
     }
 
     static listarProdutos(){

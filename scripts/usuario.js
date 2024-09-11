@@ -6,7 +6,7 @@ class Usuario {
     }
 
     toString(){
-        return "Usuário: Nome: ${this.nome}, E-mail: ${this.email}}";
+        return `Usuário: Nome: ${this.nome}, E-mail: ${this.email}}`;
     }
 }
 

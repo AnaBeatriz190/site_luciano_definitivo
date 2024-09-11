@@ -87,6 +87,10 @@ app.post('/cadastroproduto', (req, res)=> {
     const nomeproduto = req.body.nomeproduto;
     const tipoproduto = req.body.tipoproduto;
     const preco = req.body.preco;
+    const produto = new Produto(vendedor, nomeproduto, preco);
+        GerenciadorProdutos.adicionarProduto(produto);
+
+        res.redirect('/');
 });
 
 
@@ -118,6 +122,18 @@ app.get('/sucos', (req, res) =>{
 
 app.get('/usuarios', (req, res) =>{
     fs.readFile(path.join(__dirname, "public/pages/usuarios.html"), (err, data)=>{
+        if(err){
+            res.writeHead(500, {'Content-Type': 'text/plain'});
+            res.end('Erro interno do servidor.');
+            return;
+        }
+
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        res.end(data);
+    });    
+});
+app.get('/produtos', (req, res) =>{
+    fs.readFile(path.join(__dirname, "public/pages/produtos.html"), (err, data)=>{
         if(err){
             res.writeHead(500, {'Content-Type': 'text/plain'});
             res.end('Erro interno do servidor.');
