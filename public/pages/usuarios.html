@@ -55,19 +55,21 @@
 </div>
   
 <div class="container mt-5">
-    <div id="user-list"></div>
-    <script>
-        window.onload = function(){
-            fetch('mostrar-usuarios')
-                .then(response => response.text())
-                .then(html =>{
-                    document.getElementById('user-list').innerHTML = html;
-                })
-                .catch(erro => 
-                    console.log('Erro ao carregar usuários', error))
-        }
+    <div id="user-list">
+        <script>
+          window.onload = function(){
+              fetch('mostrar-usuarios')
+                  .then(response => response.text())
+                  .then(html =>{
+                      document.getElementById('user-list').innerHTML = html;
+                  })
+                  .catch(erro => 
+                      console.log('Erro ao carregar usuários', error))
+          }
 
-    </script>
+      </script>
+    </div>
+    
 
 </div>
 </body>

@@ -61,6 +61,24 @@
       <div class="col-md-6 text-center">
         <img src="./images/logotipo.jpg" class="img-fluid rounded-circle" alt="Imagem de comida">
       </div>
+      <div class="container mt-5">
+        <div id="suco-list">
+            <script>
+              window.onload = function(){
+                  fetch('mostrar-produtos')
+                      .then(response => response.text())
+                      .then(html =>{
+                          document.getElementById('suco-list').innerHTML = html;
+                      })
+                      .catch(erro => 
+                          console.log('Erro ao carregar usuários', error))
+              }
+    
+          </script>
+        </div>
+        
+    
+    </div>
     </div> 
   </div>
 </body>
