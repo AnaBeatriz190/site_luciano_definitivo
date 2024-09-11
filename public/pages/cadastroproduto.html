@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar produto</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="../css/login.css" rel="stylesheet">
+</head>
+<body>
+    
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Login Form -->
+    <form action="/cadastroproduto" method="POST">
+      <input type="text" id="vendedor" class="fadeIn second"
+          name="vendedor" placeholder="Vendedor:">
+      <input type="text" id="nomeproduto" class="fadeIn second"
+          name="nomeproduto" placeholder="Nome do produto:">
+      <input type="text" id="tipoproduto" class="fadeIn third" 
+          name="tipoproduto" placeholder="Tipo do produto: ">
+      <!-- <input type="password" id="pwdRpt" class="fadeIn third" 
+          name="pwdRpt" placeholder="Reapt password"> -->
+      <input type="submit" class="fadeIn fourth" value="Cadastrar produto">
+      <div class="alert alert-danger" id="box-login" style="display: none;">
+        <strong>Erro!</strong> Login ou senha invalidos.
+      </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+      <br />
+      <a class="underlineHover" href="/cadastro">Nao tenho conta...</a>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
