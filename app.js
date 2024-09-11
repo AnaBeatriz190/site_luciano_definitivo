@@ -58,9 +58,6 @@ app.post('/cadastro', (req, res)=> {
 
         res.redirect('/');
     }
-
-
-    const usuario1 = new Usuario('a, luciano@gmail.com, a');
     
     GerenciadorUsuarios.adicionarUsuario(usuario1);
 
@@ -91,7 +88,7 @@ app.post('/cadastroproduto', (req, res)=> {
     const produto = new Produto(vendedor, nomeproduto, preco);
         GerenciadorProdutos.adicionarProduto(produto);
 
-        res.redirect('/');
+        res.redirect('/produtos');
 });
 
 
